@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KRISNANDAAA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="headerContainer">
         <h1>Selamat datang di Krisnandaaa Websites !</h1>
     </div>
 
     <main class="content">
         <section class="bio">
-            
             <div class="bio-container">
                 <div class="bio-text">
                     <h2>About Me</h2>
                     <p>
-                        I'AM a <strong>COMPUTER SCIENCE</strong> student at Universitas Indonesia with strong interest 
+                        I'AM a <strong class="highlight">COMPUTER SCIENCE</strong> student at <strong class="highlight">Universitas Indonesia</strong> with strong interest 
                         for software development, problem solving, and competitive programming. Enthusiastic
                         about learning new technologies, building impactfull solutions, and continuosly improving
-                        technical skills. Driven by curiosity, perseverance, and a commitment to excellence
-                        in both academic and personal project.
+                        technical skills.
                     </p>
                 </div>
-
                 <div class="bio-photo">
                     <img src="profilbintang.jpeg" alt="Foto Bintang">
                     <p class="photo-caption"><strong>Muhammad Bintang Krisnanda</strong></p>
@@ -34,26 +32,39 @@
 
             <div class="social-links">
                 <div class="links-container">
-                    <a href="https://simt.kemendikdasmen.go.id/resume?id=Joe6zYQQir4ZvxFhyOuEEw&name=muhammad-bintang-krisnanda" class="link-item">
+                    <a href="https://simt.kemendikdasmen.go.id/..." class="link-item">
                         <img src="puspresnaslogo.jpeg" alt="SIMT">
-                        <p>SIMT PUSPRESNAS</p>
+                        <p> <strong class="highlight">SIMT</strong> </p>
                     </a>
-                    <a href="https://tlx.toki.id/profiles/Krisnandaaa" class="link-item">
+                    <a href="https://tlx.toki.id/..." class="link-item">
                         <img src="tlxlogo.jpeg" alt="TLX">
-                        <p>TLX</p>
+                        <p> <strong class="highlight">TLX</strong> </p>
                     </a>
-                    <a href="https://codeforces.com/profile/krisnandaaa_" class="link-item">
+                    <a href="https://codeforces.com/..." class="link-item">
                         <img src="cflogo.jpeg" alt="Codeforces">
-                        <p>Codeforces</p>
+                        <p> <strong class="highlight">CODEFORCES</strong> </p>
                     </a>
-                    <a href="https://www.linkedin.com/in/muhammad-bintang-krisnanda-365b6337b?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="link-item">
+                    <a href="https://www.linkedin.com/..." class="link-item">
                         <img src="linkedinlogo.jpeg" alt="LinkedIn">
-                        <p>LinkedIn</p>
+                        <p> <strong class="highlight">LinkedIn</strong> </p>
                     </a>
                 </div>
             </div>
-
         </section>
     </main>
+
+    <script>
+        const header = document.getElementById('headerContainer');
+        // 1. Munculkan saat halaman baru dimuat
+        window.addEventListener('load', () => {
+        header.classList.add('show');
+        });
+
+        // 2. Menghilang setelah 5 detik
+        setTimeout(function() {
+            header.style.opacity = '0';
+            header.style.visibility = 'hidden';
+        }, 5000); 
+    </script>
 </body>
 </html>
