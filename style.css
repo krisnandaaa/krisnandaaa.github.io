@@ -1,0 +1,206 @@
+/* ==========================================================================
+   RESET & BODY
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Jika bisa pakai Google Fonts, Poppins sangat bagus */
+    background-color: #1E3A8A; /* Pink sebagai base */
+    padding: 100px 20px 50px 20px; 
+}
+
+/* ==========================================================================
+   HEADER (Tampil lebih pop-out)
+   ========================================================================== */
+.container {
+    position: fixed; 
+    top: 20px;       
+    left: 50%;       
+    transform: translateX(-50%); 
+    background: #ffffff;
+    padding: 15px 30px;
+    border-radius: 50px; 
+    box-shadow: 0 8px 0px rgba(0,0,0,0.15); /* Bayangan lebih tebal agar timbul */
+    z-index: 1000;   
+    border: 2px solid #333; /* Outline hitam membuat kesan 'pop-art' */
+}
+
+h1 {
+    color: #000000;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   BIO SECTION (Dibuat lebih bersih)
+   ========================================================================== */
+.bio {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 25px;
+    border: 3px solid #333; /* Bingkai hitam tegas khas gaya kombo warna */
+    box-shadow: 10px 10px 0px #FFE301; /* Shadow kuning di kanan bawah */
+    margin: 0 auto;
+    max-width: 900px; 
+}
+
+.bio-container {
+    display: flex;
+    gap: 40px;
+    align-items: stretch; 
+    margin-bottom: 40px;
+}
+
+.bio-text {
+    flex: 7;
+}
+
+.bio-text h2 {
+    color: #333; /* Teks gelap lebih profesional */
+    text-align: left; 
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.bio-text p {
+    line-height: 1.6;
+    color: #555;
+}
+
+.bio-photo {
+    flex: 3;
+    background-color: #FEF3E1; 
+    padding: 15px;
+    border-radius: 20px;
+    border: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.bio-photo img {
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid #333;
+    object-fit: cover;
+}
+
+.photo-caption {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ==========================================================================
+   SOCIAL LINKS (Gaya Kartu)
+   ========================================================================== */
+.social-links {
+    padding-top: 30px;
+    border-top: 3px dashed #333; /* Garis putus-putus lebih artistik */
+}
+
+.link-item {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 0px #FFE301; /* Shadow kuning untuk aksen */
+    width: 150px; 
+    transition: all 0.2s ease;
+}
+
+.link-item:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px #F88CA4; /* Shadow berubah pink saat hover */
+}
+
+.link-item img {
+    /* Ukuran tetap, tidak akan melar/membesar lagi */
+    width: 60px; 
+    height: 60px; 
+    
+    /* Memastikan gambar tetap berada di dalam kotaknya tanpa distorsi */
+    object-fit: contain; 
+    
+    /* Memberi jarak bawah agar tidak menempel ke teks */
+    margin-bottom: 10px; 
+}
+/* ==========================================================================
+   SOCIAL LINKS - PERBAIKAN TATA LETAK
+   ========================================================================== */
+.social-links {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 3px dashed #333;
+}
+
+.links-container {
+    display: flex;
+    justify-content: center; /* Menjaga agar tetap di tengah */
+    gap: 20px;
+    flex-wrap: wrap;       /* Mengizinkan pindah baris jika layar sempit */
+    padding: 10px;
+}
+
+.link-item {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 0px #FFE301;
+    
+    /* Mengunci ukuran dasar agar tidak membesar/mengecil sendiri */
+    flex: 0 0 140px; 
+    
+    transition: all 0.2s ease;
+}
+
+/* --- PERBAIKAN RESPONSIVE --- */
+
+/* 1. Mode Landscape (Tetap Baris) */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .links-container {
+        flex-direction: row; /* Memaksa tetap berbaris menyamping */
+    }
+    .link-item {
+        flex: 0 0 120px; /* Ukuran kotak sedikit lebih kecil di landscape */
+    }
+}
+
+/* 2. Mode Portrait (Tumpuk Full ke Bawah) */
+@media (max-width: 768px) and (orientation: portrait) {
+    .links-container {
+        flex-direction: column; /* Memaksa ke bawah (sekolom) */
+        align-items: stretch;   /* Memaksa elemen memenuhi lebar kontainer */
+    }
+    
+    .link-item {
+        width: 100%;             /* Memaksa lebar penuh */
+        flex: 0 0 auto;          /* Membatalkan lebar tetap */
+        flex-direction: row;     /* Logo di kiri, teks di kanan agar lebih efisien */
+        justify-content: flex-start;
+        text-align: left;
+    }
+}
+/* ==========================================================================
+   MOBILE & LANDSCAPE
+   ========================================================================== */
+@media (max-width: 768px) and (orientation: portrait) {
+    .bio-container { flex-direction: column-reverse; }
+    .bio { border-radius: 15px; padding: 20px; }
+}
